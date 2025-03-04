@@ -1,0 +1,14 @@
+# Shopify ストアのドメイン
+store = "mogu-kyoto.myshopify.com"
+
+# テーマの ID（`shopify theme list` で取得）
+theme_id = "175759327532"#本番ストアのID
+
+# アップロードするディレクトリ（通常はプロジェクトルート）
+directory = "."
+
+# 自動更新を無効化する（必要に応じて設定）
+ignore_files = [
+  "config/settings_data.json",
+  "assets/tailwind.output.css"
+]

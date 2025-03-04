@@ -1,0 +1,14 @@
+{
+  "printWidth": 120,
+  "singleQuote": true,
+  "semi": true,
+  "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": "*.liquid",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}

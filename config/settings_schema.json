@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Theme settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "custom_text",
+        "label": "カスタムテキスト"
+      }
+    ]
+  }
+]
