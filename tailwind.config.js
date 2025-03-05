@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: [
-		"./**/*.liquid", // Shopify の Liquid ファイル内の Tailwind を適用
-	],
-	theme: {
-		extend: {}, // ここにカスタム設定を追加可能
-	},
-	plugins: [],
+    content: ['./**/*.liquid'], // Liquid ファイル内のクラスも検出
+    safelist: [{ pattern: /.*/ }], // すべてのクラスを含める
+    theme: {
+        extend: {},
+    },
+    plugins: [],
 };

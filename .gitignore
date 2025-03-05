@@ -24,3 +24,6 @@ Thumbs.db
 
 # Tailwind CSS のビルド結果（Shopify にアップロード不要）
 assets/tailwind.output.css
+
+config/settings_data.json
+

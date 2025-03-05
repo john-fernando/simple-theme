@@ -1,0 +1,34 @@
+<nav class='bg-white-100 p-4'>
+    <div class='container mx-auto flex items-center justify-between'>
+        <!-- ロゴ（左側） -->
+        <a href='/' class='text-2xl lg:text-4xl font-bold'>MOGU Kyoto</a>
+
+        <!-- ハンバーガーメニュー（モバイル時のみ表示） -->
+        <input type='checkbox' id='menu-toggle' class='peer hidden'>
+        <label for='menu-toggle' class='cursor-pointer text-gray-700 text-3xl'>☰</label>
+
+        <!-- オーバーレイ背景 -->
+        <div
+            class='fixed inset-0 bg-black opacity-70 hidden peer-checked:block transition-opacity duration-500'
+        ></div>
+
+        <!-- スライドメニュー -->
+        <div class='fixed top-0 right-0 h-full w-9/10 md:w-3/5 lg:w-1/4 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-500'>
+            <div class='p-6'>
+                <!-- 閉じるボタン -->
+                <label for='menu-toggle' class='cursor-pointer text-gray-700 text-3xl block text-right'>×</label>
+
+                <!-- メニューリスト -->
+                <ul class='mt-8 space-y-4'>
+                    {% for link in linklists['main-menu'].links %}
+                        <li>
+                            <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg'>
+                                {{ link.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
