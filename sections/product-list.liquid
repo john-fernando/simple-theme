@@ -1,0 +1,30 @@
+<section class='container mx-auto py-12'>
+    <h1 class='text-3xl font-bold text-center mb-8'>商品一覧</h1>
+
+    <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+        {% for product in collection.products %}
+            <div class='bg-white shadow-lg p-4 rounded-lg'>
+                <a href='{{ product.url }}'>
+                    <img
+                        src='{{ product.featured_image | image_url: width: 400 }}'
+                        alt='{{ product.title }}'
+                        class='w-full h-auto rounded'
+                        width=''
+                        height=''
+                    >
+                    <h3 class='text-xl font-semibold mt-4'>{{ product.title }}</h3>
+                    <p class='text-red-500 font-bold mt-2'>{{ product.price | money }}</p>
+                </a>
+            </div>
+        {% else %}
+            <p class='text-center col-span-full text-gray-500'>現在、商品はありません。</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Product List",
+        "presets": [{ "name": "Product List" }]
+    }
+{% endschema %}

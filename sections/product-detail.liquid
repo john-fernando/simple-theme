@@ -1,0 +1,36 @@
+<section class='container mx-auto py-12'>
+    <div class='flex flex-col md:flex-row gap-8'>
+        <!-- 商品画像 -->
+        <div class='md:w-1/2'>
+            <img
+                src='{{ product.featured_image | image_url: width: 600 }}'
+                alt='{{ product.title }}'
+                class='w-full h-auto rounded shadow'
+                width=''
+                height=''
+            >
+        </div>
+
+        <!-- 商品情報 -->
+        <div class='md:w-1/2'>
+            <h1 class='text-3xl font-bold'>{{ product.title }}</h1>
+            <p class='text-lg mt-4'>{{ product.description }}</p>
+            <p class='text-red-500 font-bold mt-4'>{{ product.price | money }}</p>
+
+            <!-- 購入ボタン -->
+            <form method='post' action='/cart/add'>
+                <input type='hidden' name='id' value='{{ product.variants.first.id }}'>
+                <button type='submit' class='mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded'>
+                    カートに追加
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Product Detail",
+        "presets": [{ "name": "Product Detail" }]
+    }
+{% endschema %}

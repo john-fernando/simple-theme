@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="ja">
-  <head>
-    <title>{{ page_title }}</title>
-    {{ content_for_header }}
-    {% comment %} 以下はtailwindcss {% endcomment %}
-    {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
-  </head>
+<html lang='ja'>
+    <head>
+        <title>{{ page_title }}</title>
+        {{ content_for_header }}
+        {% comment %} 以下はtailwindcss {% endcomment %}
+        {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
+    </head>
 
-  <body>
-    {% render 'tutorial' %}
-    {{ content_for_layout }}
-  </body>
+    <body>
+        <main id='main' role='main'>
+            {{ content_for_layout }}
+        </main>
+    </body>
 </html>
