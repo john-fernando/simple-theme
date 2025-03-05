@@ -1,0 +1,39 @@
+<section class='container mx-auto py-12'>
+    <h1 class='text-3xl font-bold text-center'>マイアカウント</h1>
+
+    {% if customer %}
+        <p class='text-center mt-4'>こんにちは、{{ customer.first_name }} さん！</p>
+        <div class='text-center mt-6'>
+            <a
+                href='{{ routes.account_orders_url }}'
+                class='bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded'
+            >
+                注文履歴
+            </a>
+            <a
+                href='{{ routes.account_logout_url }}'
+                class='bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded'
+            >
+                ログアウト
+            </a>
+        </div>
+    {% else %}
+        <p class='text-center mt-4'>アカウントにログインしてください。</p>
+        <div class='text-center mt-6'>
+            <a
+                href='{{ routes.account_login_url }}'
+                class='bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded'
+            >
+                ログイン
+            </a>
+        </div>
+    {% endif %}
+</section>
+
+{% schema %}
+    {
+        "name": "Main Account",
+        "presets": [{ "name": "Main Account" }]
+    }
+{% endschema %}
+zz

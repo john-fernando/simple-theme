@@ -1,0 +1,18 @@
+package-lock.json
+tailwind.config.js
+postcss.config.js
+src/
+README.md
+# Node.js 関連ファイル（Shopify には不要）
+node_modules/
+package-lock.json
+package.json
+
+# ローカル開発用ファイル
+.git/
+.gitignore
+.shopify/
+.vscode/
+
+# Tailwind CSS のビルド結果（Shopify には不要）
+assets/tailwind.output.css

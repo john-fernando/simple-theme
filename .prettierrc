@@ -1,0 +1,10 @@
+{
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "bracketSameLine": false,
+    "indentSchema": true,
+    "proseWrap": "always",
+    "htmlWhitespaceSensitivity": "ignore",
+    "plugins": ["@shopify/prettier-plugin-liquid"]
+}
