@@ -5,14 +5,22 @@ shopify.theme.toml
 node_modules/
 package-lock.json
 
-# macOS の不要ファイル
+# macOS の不要ファイル（Finderが生成するメタデータ）
 .DS_Store
+._*
+.DS_Store?
+.Spotlight-V100
+.Trashes
+
+# Windows の不要ファイル（エクスプローラーのキャッシュ）
+ehthumbs.db
+Thumbs.db
 
 # VSCode 設定ファイル（個人環境による差がある）
 .vscode/
 
-# Shopify の `.shopify` フォルダ（ローカル設定）
+# Shopify のローカル設定フォルダ（Git には不要）
 .shopify/
 
-# Tailwind CSS のビルド結果（手元で再ビルド可能）
+# Tailwind CSS のビルド結果（Shopify にアップロード不要）
 assets/tailwind.output.css
