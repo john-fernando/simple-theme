@@ -13,7 +13,7 @@
         ></div>
 
         <!-- スライドメニュー -->
-        <div class='fixed top-0 right-0 h-full w-8/10 sm:w-4/10 lg:w-1/4 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-500'>
+        <div class='fixed top-0 right-0 h-full w-8/10 sm:w-4/10 lg:w-1/5 bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-500'>
             <div class='p-6'>
                 <!-- 閉じるボタン -->
                 <label for='menu-toggle' class='cursor-pointer text-gray-700 text-3xl block text-right'>×</label>
@@ -22,7 +22,7 @@
                 <ul class='mt-8 space-y-4'>
                     {% for link in linklists['main-menu'].links %}
                         <li>
-                            <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg p-3'>
+                            <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg p-1'>
                                 {{ link.title }}
                             </a>
                         </li>
