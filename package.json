@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "dev": "concurrently \"npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --watch\" \"shopify theme dev\"",
-        "build": "npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css",
+        "build": "npx @tailwindcss/cli -i ./assets/tailwind.input.css -o ./assets/tailwind.output.css --minify",
         "deploy": "npm run build && shopify theme push"
     },
     "keywords": [],
