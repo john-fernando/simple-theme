@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% comment %} <!-- sections/background-video.liquid --> {% endcomment %}
 <div class='relative w-full h-screen -z-40'>
     <!-- 背景動画 -->
@@ -9,27 +8,11 @@
 
     <!-- 背景上のテキストやコンテンツ -->
     <div class='relative flex items-center justify-center w-full h-full text-white bg-black/50'>
-        <div class='text-center'>
-            <h1 class='text-4xl font-bold'>ようこそ、MOGU Kyotoへ</h1>
-            <p class='mt-4 text-lg'>シンプルで美しいオンラインストア</p>
-        </div>
+        {% comment %}
+            <div class='text-center'>
+                <h1 class='text-4xl font-bold'>ようこそ、MOGU Kyotoへ</h1>
+                <p class='mt-4 text-lg'>シンプルで美しいオンラインストア</p>
+            </div>
+        {% endcomment %}
     </div>
 </div>
-=======
-{% comment %} <!-- sections/background-video.liquid --> {% endcomment %}
-<div class='relative w-full h-screen -z-40'>
-    <!-- 背景動画 -->
-    <video autoplay loop muted class='absolute top-0 left-0 w-full h-full object-cover'>
-        <source src='{{ 'cream-decoration.webm' | asset_url }}' type='video/webm'>
-        お使いのブラウザは動画に対応していません。
-    </video>
-
-    <!-- 背景上のテキストやコンテンツ -->
-    <div class='relative flex items-center justify-center w-full h-full text-white bg-black/50'>
-        {% comment %} <div class='text-center'>
-            <h1 class='text-4xl font-bold'>ようこそ、MOGU Kyotoへ</h1>
-            <p class='mt-4 text-lg'>シンプルで美しいオンラインストア</p>
-        </div> {% endcomment %}
-    </div>
-</div>
->>>>>>> a2c127a20723a4502cb5e84f9e3d17e746b5ec5b
