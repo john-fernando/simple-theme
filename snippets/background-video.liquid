@@ -1,8 +1,9 @@
 {% comment %} <!-- sections/background-video.liquid --> {% endcomment %}
 <div class='relative w-full h-screen -z-40'>
     <!-- 背景動画 -->
-    <video autoplay loop muted class='absolute top-0 left-0 w-full h-full object-cover'>
-        <source src='{{ 'cream-decoration.webm' | asset_url }}' type='video/webm'>
+    <video autoplay loop muted playsinline class='absolute top-0 left-0 w-full h-full object-cover'>
+        <source src='{{ 'cream-decoration480p.webm' | asset_url }}' type='video/webm'>
+        <source src='{{ 'cream-decoration480p.mp4' | asset_url }}' type='video/mp4'>
         お使いのブラウザは動画に対応していません。
     </video>
 
