@@ -2,10 +2,29 @@
 <div class='relative w-full h-screen -z-40'>
     <!-- 背景動画 -->
     <video autoplay loop muted playsinline class='absolute top-0 left-0 w-full h-full object-cover'>
-        <source src='{{ 'cream-decoration480p.webm' | asset_url }}' type='video/webm'>
-        <source src='{{ 'cream-decoration480p.mp4' | asset_url }}' type='video/mp4'>
+        <!-- スマホ用（低画質） -->
+        <source id='video-mobile-webm' src='{{ 'cream-decoration480p.webm' | asset_url }}' type='video/webm'>
+        <source id='video-mobile' src='{{ 'cream-decoration480p.mp4' | asset_url }}' type='video/mp4'>
+
+        <!-- PC用（高画質） -->
+        <source id='video-pc-webm' src='{{ 'cream-decoration1080p.webm' | asset_url }}' type='video/webm'>
+        <source id='video-pc' src='{{ 'cream-decoration1080p.mp4' | asset_url }}' type='video/mp4'>
+
         お使いのブラウザは動画に対応していません。
     </video>
+
+    <script>
+        // 画面サイズを確認して、適切な動画を表示
+        if (window.innerWidth < 768) {
+            // スマホの場合、PC用の動画を削除
+            document.getElementById('video-pc-webm').remove(); // PC用のWebMを削除
+            document.getElementById('video-pc').remove(); // PC用のMP4を削除
+        } else {
+            // PCの場合、スマホ用の動画を削除
+            document.getElementById('video-mobile-webm').remove(); // スマホ用のWebMを削除
+            document.getElementById('video-mobile').remove(); // スマホ用のMP4を削除
+        }
+    </script>
 
     <!-- 背景上のテキストやコンテンツ -->
     <div class='relative flex items-center justify-center w-full h-full text-white bg-black/50'>
