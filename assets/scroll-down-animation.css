@@ -1,0 +1,52 @@
+/* .scroll-downクラス：スクロールダウンの矢印部分のスタイル */
+.scroll-down {
+    height: 40px; /* 高さ */
+    width: 20px; /* 幅 */
+    position: absolute; /* 位置を絶対指定 */
+    bottom: 20px; /* 画面下から20pxの位置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 中央寄せ */
+    align-items: center; /* 中央寄せ */
+}
+
+/* スクロール文字のスタイル */
+.scroll-text {
+    font-size: 12px; /* フォントサイズを少し小さく */
+    font-weight: 300; /* フォントを細く（軽く）する */
+    color: #e5e5e5; /* 文字色 */
+    margin-bottom: 40px; /* 矢印との間隔 */
+    text-align: center; /* 中央揃え */
+}
+
+/* .scroll-down::before擬似要素：矢印のデザイン */
+.scroll-down::before {
+    content: ''; /* 空のコンテンツを生成 */
+    position: absolute; /* 擬似要素の位置を絶対指定 */
+    top: 30%; /* 上から30%の位置 */
+    left: 50%; /* 横方向は中央に配置 */
+    height: 8px; /* 矢印の高さを細く */
+    width: 8px; /* 矢印の幅を細く */
+    transform: translate(-50%, -100%) rotate(45deg); /* 中央揃え、回転して矢印を作成 */
+    border: 1px solid #e5e5e5; /* 矢印の枠線を細く */
+    border-top: transparent; /* 上の枠線を透明に */
+    border-left: transparent; /* 左の枠線を透明に */
+    animation: scroll-down 1.2s ease-in-out infinite; /* アニメーションの適用 */
+}
+
+/* アニメーション：スクロールダウンの矢印が上下に動く */
+@keyframes scroll-down {
+    0% {
+        opacity: 0; /* 最初は透明 */
+    }
+    20% {
+        opacity: 1; /* 表示される */
+    }
+    60% {
+        opacity: 1; /* 継続して表示される */
+    }
+    100% {
+        top: 90%; /* 矢印が下に移動 */
+        opacity: 0; /* 最後は透明 */
+    }
+}
