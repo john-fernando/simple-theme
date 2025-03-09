@@ -1,5 +1,6 @@
 {{ 'scroll-down-animation.css' | asset_url | stylesheet_tag }}
 
-<div class='scroll-down'>
+{% comment %} 下からの配置はデバイスによって変わるからTailwindを使用する {% endcomment %}
+<div class='scroll-down bottom-[55px] md:bottom-5 '>
     <span class='scroll-text'>scroll</span>
 </div>

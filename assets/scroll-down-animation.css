@@ -3,7 +3,7 @@
     height: 40px; /* 高さ */
     width: 20px; /* 幅 */
     position: absolute; /* 位置を絶対指定 */
-    bottom: 20px; /* 画面下から20pxの位置 */
+    /* bottom: 20px; 元ファイルでTailwindを使う */
     display: flex;
     flex-direction: column;
     justify-content: center; /* 中央寄せ */
