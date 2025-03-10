@@ -7,7 +7,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-red-500: oklch(0.637 0.237 25.331);
-    --color-amber-100: oklch(0.962 0.059 95.617);
     --color-amber-300: oklch(0.879 0.169 91.605);
     --color-green-500: oklch(0.723 0.219 149.579);
     --color-green-600: oklch(0.627 0.194 149.214);
@@ -372,9 +371,6 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
-  }
-  .bg-amber-100 {
-    background-color: var(--color-amber-100);
   }
   .bg-black\/50 {
     background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
