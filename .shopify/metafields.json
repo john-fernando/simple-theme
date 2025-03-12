@@ -14,7 +14,7 @@
       "key": "allergen-information",
       "namespace": "shopify",
       "name": "アレルゲン情報",
-      "description": "Indicates potential allergens present in food or beverages, such as wheat or peanuts",
+      "description": "食物や飲料に含まれる潜在的なアレルゲンを示す(小麦やピーナッツなど)",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
@@ -24,7 +24,7 @@
       "key": "flavor",
       "namespace": "shopify",
       "name": "フレーバー",
-      "description": "Specifies the taste or flavor of a product, e.g. vanilla, mint",
+      "description": "商品の味やフレーバーを指定します（例：バニラ、ミント）",
       "type": {
         "name": "list.metaobject_reference",
         "category": "REFERENCE"

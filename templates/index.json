@@ -1,8 +1,11 @@
 {
-  "sections": {
-    "main": {
-      "type": "home"
-    }
-  },
-  "order": ["main"]
+    "sections": {
+        "main": {
+            "type": "home"
+        },
+        "background-video": {
+            "type": "main-background-video"
+        }
+    },
+    "order": ["background-video", "main"]
 }
