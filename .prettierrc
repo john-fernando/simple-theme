@@ -1,7 +1,7 @@
 {
     "printWidth": 120,
     "tabWidth": 4,
-    "singleQuote": false,
+    "singleQuote": true,
     "bracketSameLine": false,
     "indentSchema": true,
     "proseWrap": "always",
