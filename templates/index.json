@@ -1,11 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "main": {
-            "type": "home"
-        },
-        "background-video": {
-            "type": "main-background-video"
-        }
+  "sections": {
+    "background-video": {
+      "type": "main-background-video",
+      "settings": {
+        "main-video-pc-mp4": "shopify://files/videos/cream-decoration1080p.mp4",
+        "main-video-pc-webm": "shopify://files/videos/cream-decoration1080p.webm",
+        "main-video-mobile-mp4": "shopify://files/videos/cream-decoration480p.mp4",
+        "main-video-mobile-webm": "shopify://files/videos/cream-decoration480p.webm"
+      }
     },
-    "order": ["background-video", "main"]
+    "main": {
+      "type": "home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "background-video",
+    "main"
+  ]
 }
