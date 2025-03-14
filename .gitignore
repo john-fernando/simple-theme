@@ -1,29 +1,46 @@
-# Shopify の設定ファイル（環境依存のため）
+# 📌 **Shopify の設定ファイル**
+# `shopify theme dev` や `shopify theme push` に関係するが、Git で管理する必要なし
 shopify.theme.toml
 
-# Node.js 関連ファイル（依存関係は package.json で管理）
+# 📌 **Shopify のローカル設定フォルダ**
+# Shopify CLI のキャッシュや設定データ
+.shopify/
+
+# 📌 **Shopify の自動生成ファイル**
+# `settings_data.json` は Shopify の管理画面で編集されるので Git には含めない
+config/settings_data.json
+
+# 📌 **Node.js 関連ファイル**
+# `node_modules/` は `package.json` から再インストール可能なので除外
 node_modules/
 package-lock.json
 
-# macOS の不要ファイル（Finderが生成するメタデータ）
+# 📌 **Tailwind CSS のビルド結果**
+# `tailwind.output.css` は自動生成されるので Git には含めない
+assets/tailwind.output.css
+
+# 📌 **macOS の不要ファイル**
+# Finder が作成する不要なメタデータ
 .DS_Store
 ._*
 .DS_Store?
 .Spotlight-V100
 .Trashes
 
-# Windows の不要ファイル（エクスプローラーのキャッシュ）
+# 📌 **Windows の不要ファイル**
+# エクスプローラーのキャッシュファイルを無視
 ehthumbs.db
 Thumbs.db
 
-# VSCode 設定ファイル（個人環境による差がある）
+# 📌 **VSCode 設定ファイル**
+# 開発者ごとに環境が違うので、`.vscode/` は Git に含めない
 .vscode/
 
-# Shopify のローカル設定フォルダ（Git には不要）
-.shopify/
+# 📌 **ログファイル**
+# もしエラーログなどを出力していたら、`.log` ファイルを無視
+*.log
 
-# Tailwind CSS のビルド結果（Shopify にアップロード不要）
-assets/tailwind.output.css
-
-config/settings_data.json
-
+# 📌 **一時ファイル**
+# もし一時的にバックアップを取る場合、Git には含めない
+*.bak
+*.tmp
