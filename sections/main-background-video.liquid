@@ -1,27 +1,52 @@
 <section class='relative w-full h-screen -z-10'>
     <!-- 背景動画 -->
     <video autoplay loop muted playsinline class='absolute top-0 left-0 w-full h-full object-cover'>
+        {% comment %}
+            <!-- スマホ用（低画質） -->
+            <source
+                id='main-video-mobile-webm'
+                src='{{ "cream-decoration480p.webm" | asset_url }}'
+                type='video/webm'
+            >
+            <source
+                id='main-video-mobile-mp4'
+                src='{{ "cream-decoration480p.mp4" | asset_url }}'
+                type='video/mp4'
+            >
+
+            <!-- PC用（高画質） -->
+            <source
+                id='main-video-pc-webm'
+                src='{{ "cream-decoration1080p.webm" | asset_url }}'
+                type='video/webm'
+            >
+            <source
+                id='main-video-pc-mp4'
+                src='{{ 'cream-decoration1080p.mp4' | asset_url }}'
+                type='video/mp4'
+            >
+        {% endcomment %}
         <!-- スマホ用（低画質） -->
         <source
             id='main-video-mobile-webm'
-            src='{{ "cream-decoration480p.webm" | asset_url }}'
+            src='{{ section.settings.main-video-mobile-webm | image_url }}'
             type='video/webm'
         >
         <source
             id='main-video-mobile-mp4'
-            src='{{ "cream-decoration480p.mp4" | asset_url }}'
+            src='{{ section.settings.main-video-mobile-mp4 | image_url }}'
             type='video/mp4'
         >
 
         <!-- PC用（高画質） -->
         <source
             id='main-video-pc-webm'
-            src='{{ "cream-decoration1080p.webm" | asset_url }}'
+            src='{{section.settings.main-video-pc-webm | image_url }}'
             type='video/webm'
         >
         <source
             id='main-video-pc-mp4'
-            src='{{ 'cream-decoration1080p.mp4' | asset_url }}'
+            src='{{ section.settings.main-video-pc-mp4 | image_url }}'
             type='video/mp4'
         >
 
@@ -50,22 +75,22 @@
         "name": "トップページ背景動画",
         "settings": [
             {
-                "type": "video",
+                "type": "image_picker",
                 "id": "main-video-pc-mp4",
                 "label": "PC動画 (MP4)"
             },
             {
-                "type": "video",
+                "type": "image_picker",
                 "id": "main-video-pc-webm",
                 "label": "PC動画 (WebM)"
             },
             {
-                "type": "video",
+                "type": "image_picker",
                 "id": "main-video-mobile-mp4",
                 "label": "Mobile動画 (MP4)"
             },
             {
-                "type": "video",
+                "type": "image_picker",
                 "id": "main-video-mobile-webm",
                 "label": "Mobile動画 (WebM)"
             }
