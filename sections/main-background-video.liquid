@@ -37,7 +37,7 @@
             src='{{ section.settings.main-video-mobile-mp4 | file_url }}'
             type='video/mp4'
         >
-       {{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, controls: true }}
+       
 
         <!-- PC用（高画質） -->
         <!-- <source
@@ -70,6 +70,7 @@
         {% render 'scroll-down-animation' %}
     </div>
 </section>
+{{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, controls: true }}
 
 {% schema %}
     {
