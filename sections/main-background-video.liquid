@@ -29,9 +29,10 @@
         <!-- スマホ用（低画質） -->
         <source
             id='main-video-mobile-webm'
-            src='{{ section.settings.main-video-mobile-webm | image_url }}'
+            src='{{ section.settings.main-video-mobile-webm | video_tag }}'
             type='video/webm'
         >
+      {{ section.settings.main-video-pc-mp4 | video_tag }}
         <source
             id='main-video-mobile-mp4'
             src='{{ section.settings.main-video-mobile-mp4 | image_url }}'
