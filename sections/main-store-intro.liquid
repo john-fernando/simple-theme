@@ -3,7 +3,7 @@
     {% if section.settings.store_logo %}
         {% comment %} ストアのロゴを表示 {% endcomment %}
         <img
-            src='{{ 'mogu_kyoto_logo.png' | asset_url }}'
+            src='{{ section.settings.store_logo | image_url }}'
             width=''
             height=''
             alt='{{ section.settings.store_name }}'
