@@ -37,18 +37,19 @@
             src='{{ section.settings.main-video-mobile-mp4 | file_url }}'
             type='video/mp4'
         >
+       {{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, controls: true }}
 
         <!-- PC用（高画質） -->
-        <source
+        <!-- <source
             id='main-video-pc-webm'
             src='{{section.settings.main-video-pc-webm | file_url }}'
             type='video/webm'
-        >
-        <source
+        > -->
+        <!-- <source
             id='main-video-pc-mp4'
             src='{{ section.settings.main-video-pc-mp4 | file_url }}'
             type='video/mp4'
-        >
+        > -->
 
         お使いのブラウザは動画に対応していません。
     </video>
