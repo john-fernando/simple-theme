@@ -1,115 +1,135 @@
-<section class='relative w-full h-screen -z-10'>
-  {% if section.settings.main-video-pc-mp4 %}
+<section class="relative w-full h-screen -z-10">
+  {% if section.settings['main-video-pc-mp4'] %}
+    {% comment %} 設定された動画を表示（Shopify の設定から取得） {% endcomment %}
+    <div id="main-video-pc-mp4">
+      {{
+        section.settings['main-video-pc-mp4']
+        | video_tag:
+          autoplay: true,
+          loop: true,
+          muted: true,
+          playsinline: true,
+          class: 'absolute top-0 left-0 w-full h-full object-cover'
+      }}
+    </div>
     {% comment %} 設定された動画を表示（Shopify の設定から取得） {% endcomment %}
     <div id="main-video-mobile-mp4">
-    {{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: "absolute top-0 left-0 w-full h-full object-cover"  }}
-      </div>
-{% else %}
+      {{
+        section.settings['main-video-mobile-mp4']
+        | video_tag:
+          autoplay: true,
+          loop: true,
+          muted: true,
+          playsinline: true,
+          class: 'absolute top-0 left-0 w-full h-full object-cover'
+      }}
+    </div>
+  {% else %}
     {% comment %} 動画が設定されていない場合の代替コンテンツ {% endcomment %}
     <p>動画が設定されていません</p>
-{% endif %}
+  {% endif %}
 
-    <!-- 背景動画 -->
-    <video autoplay loop muted playsinline class='absolute top-0 left-0 w-full h-full object-cover'>
-        {% comment %}
-            <!-- スマホ用（低画質） -->
-            <source
-                id='main-video-mobile-webm'
-                src='{{ "cream-decoration480p.webm" | asset_url }}'
-                type='video/webm'
-            >
-            <source
-                id='main-video-mobile-mp4'
-                src='{{ "cream-decoration480p.mp4" | asset_url }}'
-                type='video/mp4'
-            >
+  <!-- 背景動画 -->
+  <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+    {% comment %}
+      <!-- スマホ用（低画質） -->
+      <source
+          id='main-video-mobile-webm'
+          src='{{ "cream-decoration480p.webm" | asset_url }}'
+          type='video/webm'
+      >
+      <source
+          id='main-video-mobile-mp4'
+          src='{{ "cream-decoration480p.mp4" | asset_url }}'
+          type='video/mp4'
+      >
 
-            <!-- PC用（高画質） -->
-            <source
-                id='main-video-pc-webm'
-                src='{{ "cream-decoration1080p.webm" | asset_url }}'
-                type='video/webm'
-            >
-            <source
-                id='main-video-pc-mp4'
-                src='{{ 'cream-decoration1080p.mp4' | asset_url }}'
-                type='video/mp4'
-            >
-        {% endcomment %}
-        <!-- スマホ用（低画質） -->
-        <source
-            id='main-video-mobile-webm'
-            src='{{ section.settings.main-video-mobile-webm | file_url }}'
-            type='video/webm'
-        >
-        <source
-            id='main-video-mobile-mp4'
-            src='{{ section.settings.main-video-mobile-mp4 | file_url }}'
-            type='video/mp4'
-        >
+      <!-- PC用（高画質） -->
+      <source
+          id='main-video-pc-webm'
+          src='{{ "cream-decoration1080p.webm" | asset_url }}'
+          type='video/webm'
+      >
+      <source
+          id='main-video-pc-mp4'
+          src='{{ 'cream-decoration1080p.mp4' | asset_url }}'
+          type='video/mp4'
+      >
+    {% endcomment %}
+    <!-- スマホ用（低画質） -->
+    <source
+      id="main-video-mobile-webm"
+      src="{{ section.settings.main-video-mobile-webm | file_url }}"
+      type="video/webm"
+    >
+    <source
+      id="main-video-mobile-mp4"
+      src="{{ section.settings.main-video-mobile-mp4 | file_url }}"
+      type="video/mp4"
+    >
 
-        <!-- PC用（高画質） -->
-        <source
-            id='main-video-pc-webm'
-            src='{{section.settings.main-video-pc-webm | file_url }}'
-            type='video/webm'
-        >
-        <source
-            id='main-video-pc-mp4'
-            src='{{ section.settings.main-video-pc-mp4 | file_url }}'
-            type='video/mp4'
-        >
+    <!-- PC用（高画質） -->
+    <source
+      id="main-video-pc-webm"
+      src="{{section.settings.main-video-pc-webm | file_url }}"
+      type="video/webm"
+    >
+    <source
+      id="main-video-pc-mp4"
+      src="{{ section.settings.main-video-pc-mp4 | file_url }}"
+      type="video/mp4"
+    >
 
-        お使いのブラウザは動画に対応していません。
-    </video>
+    お使いのブラウザは動画に対応していません。
+  </video>
 
-    <script>
-        // 画面サイズを確認して、適切な動画を表示
-        if (window.innerWidth < 768) {
-            document.getElementById('main-video-pc-webm')?.remove();
-            document.getElementById('main-video-pc-mp4')?.remove();
-        } else {
-            document.getElementById('main-video-mobile-webm')?.remove();
-          alert("hola")
-            document.getElementById('main-video-mobile-mp4')?.remove();
-        }
-    </script>
+  <script>
+    // 画面サイズを確認して、適切な動画を表示
+    if (window.innerWidth < 768) {
+        document.getElementById('main-video-pc-webm')?.remove();
+        document.getElementById('main-video-pc-mp4')?.remove();
+    } else {
+        document.getElementById('main-video-mobile-webm')?.remove();
+      alert("hola")
+        document.getElementById('main-video-mobile-mp4')?.remove();
+    }
+  </script>
 
-    <!-- 背景上のテキストやコンテンツ -->
-    <div class='relative flex items-center justify-center w-full h-full text-white bg-black/50'>
-        {% render 'scroll-down-animation' %}
-    </div>
+  <!-- 背景上のテキストやコンテンツ -->
+  <div class="relative flex items-center justify-center w-full h-full text-white bg-black/50">
+    {% render 'scroll-down-animation' %}
+  </div>
 </section>
 
 {% schema %}
-    {
-        "name": "トップページ背景動画",
-        "settings": [
-            {
-                "type": "video",
-                "id": "main-video-pc-mp4",
-                "label": "PC動画 (MP4)"
-            },
-            {
-                "type": "video",
-                "id": "main-video-pc-webm",
-                "label": "PC動画 (WebM)"
-            },
-            {
-                "type": "video",
-                "id": "main-video-mobile-mp4",
-                "label": "Mobile動画 (MP4)"
-            },
-            {
-                "type":"video",
-                "id": "main-video-mobile-webm",
-                "label": "Mobile動画 (WebM)"
-            }
-        ],
-        "presets": [
-            {
-                "name": "背景動画"
-            }
-        ]
-    }
+{
+    "name": "トップページ背景動画",
+    "settings": [
+        {
+            "type": "video",
+            "id": "main-video-pc-mp4",
+            "label": "PC動画 (MP4)"
+        },
+        {
+            "type": "video",
+            "id": "main-video-pc-webm",
+            "label": "PC動画 (WebM)"
+        },
+        {
+            "type": "video",
+            "id": "main-video-mobile-mp4",
+            "label": "Mobile動画 (MP4)"
+        },
+        {
+            "type":"video",
+            "id": "main-video-mobile-webm",
+            "label": "Mobile動画 (WebM)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "背景動画"
+        }
+    ]
+}
 {% endschema %}
