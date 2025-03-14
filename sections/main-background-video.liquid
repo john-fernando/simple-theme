@@ -1,4 +1,12 @@
 <section class='relative w-full h-screen -z-10'>
+  {% if section.settings.video %}
+    {% comment %} 設定された動画を表示（Shopify の設定から取得） {% endcomment %}
+    {{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, playsinline: true, class: "absolute top-0 left-0 w-full h-full object-cover" }}
+{% else %}
+    {% comment %} 動画が設定されていない場合の代替コンテンツ {% endcomment %}
+    <p>動画が設定されていません</p>
+{% endif %}
+
     <!-- 背景動画 -->
     <video autoplay loop muted playsinline class='absolute top-0 left-0 w-full h-full object-cover'>
         {% comment %}
