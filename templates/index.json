@@ -12,7 +12,7 @@
     "main-background-video": {
       "type": "main-background-video",
       "settings": {
-        "main-video-pc-mp4": "shopify://files/videos/cream-decoration360p.mp4",
+        "main-video-pc-mp4": "shopify://files/videos/cream-decoration1080p.mp4",
         "main-video-pc-webm": "shopify://files/videos/cream-decoration360p.mp4",
         "main-video-mobile-mp4": "shopify://files/videos/cream-decoration480p.mp4",
         "main-video-mobile-webm": "shopify://files/videos/cream-decoration480p.webm"
