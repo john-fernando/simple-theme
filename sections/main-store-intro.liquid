@@ -16,7 +16,7 @@
 
     {% comment %} ストア説明文 {% endcomment %}
     <p class='mt-2 text-lg text-gray-700 max-w-md'>
-        {{ section.settings.store_description }}
+        {{ section.settings.store_small_intro }}
     </p>
 </section>
 
@@ -27,18 +27,18 @@
             {
                 "type": "image_picker",
                 "id": "store_logo",
-                "label": "ストアロゴ"
+                "label": "お店のロゴ"
             },
             {
                 "type": "text",
                 "id": "store_name",
-                "label": "ストア名",
+                "label": "お店の名前",
                 "default": "MOGU kyoto"
             },
             {
                 "type": "textarea",
-                "id": "store_description",
-                "label": "ストアの紹介文",
+                "id": "store_small_intro",
+                "label": "ストア紹介（短文）",
                 "default": "丸太町で国産食材をテーマにした、自然派のケーキと焼き菓子に出会えるパティスリー"
             }
         ],
