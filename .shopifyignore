@@ -15,4 +15,4 @@ package.json
 .vscode/
 
 # Tailwind CSS のビルド結果（Shopify には不要）
-assets/tailwind.output.css
+# assets/tailwind.output.css shopify設定で使う！

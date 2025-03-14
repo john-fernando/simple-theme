@@ -1,25 +1,17 @@
 {% comment %} ストア紹介セクション {% endcomment %}
 <section class='flex flex-col items-center text-center py-8'>
     {% if section.settings.store_logo %}
-        {% comment %} ストアのロゴを表示 {% endcomment %}
-        <img
-            src='{{ section.settings.store_logo | image_url }}'
-            width=''
-            height=''
-            alt='{{ section.settings.store_name }}'
-            class='mb-4 w-32 h-auto'
-        >
+        {{ section.settings.store_logo | image_url: width: null | image_tag: class: 'mb-4 w-32 h-auto m-3' }}
     {% endif %}
 
     {% comment %} ストア名 {% endcomment %}
-    <h1 class='text-2xl font-bold'>{{ section.settings.store_name }}</h1>
+    <h1 class='text-2xl font-bold my-4'>{{ section.settings.store_name }}</h1>
 
     {% comment %} ストア説明文 {% endcomment %}
     <p class='mt-2 text-lg text-gray-700 max-w-lg'>
         {{ section.settings.store_small_intro }}
     </p>
 </section>
-<p>Store Logo: {{ section.settings.store_logo }}</p>
 
 {% schema %}
     {

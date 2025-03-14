@@ -4,7 +4,6 @@
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         {% comment %} 以下はtailwindcss {% endcomment %}
         {{ 'tailwind.output.css' | asset_url | stylesheet_tag }}
-
         <title>{{ page_title }}</title>
         {{ content_for_header }}
     </head>
