@@ -1,0 +1,17 @@
+<header>
+    {% render 'navigation' %}
+</header>
+
+{% schema %}
+    {
+        "name": "ヘッダー",
+        "settings": [
+            {
+                "type": "link_list",
+                "id": "menu",
+                "label": "ナビゲーションメニュー選択",
+                "default": "main-menu"
+            }
+        ]
+    }
+{% endschema %}
