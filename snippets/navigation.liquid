@@ -20,18 +20,9 @@
 
                 <!-- メニューリスト -->
                 <ul class='mt-8 space-y-4'>
-                    {% comment %}
-                        {% for link in linklists['main-menu'].links %}
-                            <li>
-                                <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg p-1'>
-                                    {{ link.title }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    {% endcomment %}
                     {% for link in section.settings.menu.links %}
                         <li>
-                            <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg p-1'>
+                            <a href='{{ link.url }}' class='text-gray-700 hover:text-gray-900 block text-lg p-2 md:p-1'>
                                 {{ link.title }}
                             </a>
                         </li>
