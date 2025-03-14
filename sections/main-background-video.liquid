@@ -71,6 +71,11 @@
     </div>
 </section>
 {{ section.settings.main-video-pc-mp4 | video_tag: autoplay: true, loop: true, muted: true, controls: true }}
+<video autoplay loop muted controls>
+    <source src="{{ 'cream-decoration1080p.mp4' | file_url }}" type="video/mp4">
+    お使いのブラウザは動画タグをサポートしていません。
+</video>
+
 
 {% schema %}
     {
