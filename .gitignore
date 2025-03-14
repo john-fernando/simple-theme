@@ -17,7 +17,8 @@ package-lock.json
 
 # 📌 **Tailwind CSS のビルド結果**
 # `tailwind.output.css` は自動生成されるので Git には含めない
-assets/tailwind.output.css
+# assets/tailwind.output.css 
+# 危険：　Shopify themeだとtailwind cssが必要だからこれは無効にする
 
 # 📌 **macOS の不要ファイル**
 # Finder が作成する不要なメタデータ
