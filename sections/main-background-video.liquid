@@ -29,24 +29,24 @@
         <!-- スマホ用（低画質） -->
         <source
             id='main-video-mobile-webm'
-            src='{{ section.settings.main-video-mobile-webm | asset_url }}'
+            src='{{ section.settings.main-video-mobile-webm | file_url }}'
             type='video/webm'
         >
         <source
             id='main-video-mobile-mp4'
-            src='{{ section.settings.main-video-mobile-mp4 | asset_url }}'
+            src='{{ section.settings.main-video-mobile-mp4 | file_url }}'
             type='video/mp4'
         >
 
         <!-- PC用（高画質） -->
         <source
             id='main-video-pc-webm'
-            src='{{ "cream-decoration1080p.mp4" | asset_url }}'
+            src='{{section.settings.main-video-pc-webm | file_url }}'
             type='video/webm'
         >
         <source
             id='main-video-pc-mp4'
-            src='{{ section.settings.main-video-pc-mp4 | asset_url }}'
+            src='{{ section.settings.main-video-pc-mp4 | file_url }}'
             type='video/mp4'
         >
 
