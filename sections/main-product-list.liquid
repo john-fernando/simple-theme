@@ -1,35 +1,58 @@
-<section class='container mx-auto px-4 py-8'>
-    <h2 class='text-2xl font-normal text-gray-800 mb-6'>
-        {{ section.settings['main-title'] }}
-    </h2>
+<section class='w-full bg-cover bg-center py-12'>
+    <div class='container mx-auto px-4 max-w-5xl'>
+        {% comment %} おすすめ商品タイトル {% endcomment %}
+        <h2 class='text-2xl font-normal text-gray-800 text-center'>
+            {{ section.settings['main-title'] }}
+        </h2>
+        {% comment %} 商品紹介文 {% endcomment %}
+        <p class='text-center font-light text-gray-700 mt-3 mb-6'>
+            {% assign sentences = section.settings.description | strip_html | split: '。' %}
+            {{ sentences[0] }}。
+            <br>
+            {% if sentences[1] %}
+                {{ sentences[1] }}...
+            {% endif %}
+        </p>
+        {% comment %} 商品一覧 {% endcomment %}
+        <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            {% for product in collections[section.settings['main-collection']].products %}
+                <div class='p-4 flex flex-col'>
+                    <a href='{{ product.url }}' class='flex-grow'>
+                        {% if product.featured_image %}
+                            {{
+                                product.featured_image
+                                | image_url: width: null
+                                | image_tag: class: 'w-full h-60 object-cover'
+                            }}
+                        {% endif %}
 
-    <p class='text-center text-gray-700 mb-6'>
-        {{ section.settings.description }}
-    </p>
+                        <h3 class='mt-2 text-lg font-semibold text-gray-900'>{{ product.title }}</h3>
 
-    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        {% for product in collections[section.settings['main-collection']].products %}
-            <div class='border rounded-lg p-4 shadow-md bg-white'>
-                <a href='{{ product.url }}'>
-                    {% if product.featured_image %}
-                        {{ product.featured_image | image_url: width: null | image_tag: class: 'rounded-lg' }}
-                    {% endif %}
-
-                    <h3 class='mt-2 text-lg font-semibold text-gray-900'>{{ product.title }}</h3>
-                    <p class='text-gray-700 my-1'>{{ product.price | money }}</p>
-                </a>
-                <div class='mt-3 text-center'>
-                    <a
-                        href='{{ product.url }}'
-                        class='inline-block bg-pink-300 text-white text-xs font-normal py-2 px-3 border-2 border-white hover:border-pink-300 transition'
-                    >
-                        商品を見る
+                        {% if product.description != blank %}
+                            <p class='text-gray-700 text-xs font-sans mt-2'>
+                                {% assign sentences = product.description | strip_html | split: '。' %}
+                                {{ sentences[0] }}。
+                                <br>
+                                {% if sentences[1] %}
+                                    {{ sentences[1] }}...
+                                {% endif %}
+                            </p>
+                        {% endif %}
                     </a>
+
+                    <div class='mt-3 text-center'>
+                        <a
+                            href='{{ product.url }}'
+                            class='inline-block text-pink-300 text-xs font-semibold py-2 px-3 hover:underline transition'
+                        >
+                            もっと見る...
+                        </a>
+                    </div>
                 </div>
-            </div>
-        {% else %}
-            <p class='text-center text-gray-600 my-5'>現在、商品がありません。</p>
-        {% endfor %}
+            {% else %}
+                <p class='text-center text-gray-600 my-5'>現在、商品がありません。</p>
+            {% endfor %}
+        </div>
     </div>
 </section>
 

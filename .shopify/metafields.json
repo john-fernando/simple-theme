@@ -29,6 +29,16 @@
         "name": "list.metaobject_reference",
         "category": "REFERENCE"
       }
+    },
+    {
+      "key": "flour-grain-type",
+      "namespace": "shopify",
+      "name": "小麦粉・穀物の種類",
+      "description": "商品に含まれる穀物や小麦粉のタイプを指定（例：トウモロコシ、小麦）",
+      "type": {
+        "name": "list.metaobject_reference",
+        "category": "REFERENCE"
+      }
     }
   ],
   "variant": [],

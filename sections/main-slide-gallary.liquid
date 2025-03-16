@@ -1,0 +1,98 @@
+<div class='gallery-container'>
+    <div class='gallery'>
+        {% for image in section.settings.gallery_images %}
+            {{ image | image_url: width: null | image_tag }}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* ギャラリーの枠 */
+    .gallery-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        width: 100%;
+        background-color: #f8f8f8;
+        padding: 20px 0;
+    }
+
+    /* スライド全体 */
+    .gallery {
+        display: flex;
+        gap: 10px;
+        animation: scrollGallery 15s linear infinite;
+    }
+
+    /* 画像のサイズ */
+    .gallery img {
+        width: 200px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    /* スクロールのアニメーション */
+    @keyframes scrollGallery {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+
+{% schema %}
+    {
+        "name": "ギャラリー",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "gallery_image_1",
+                "label": "画像 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_2",
+                "label": "画像 2"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_3",
+                "label": "画像 3"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_4",
+                "label": "画像 4"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_5",
+                "label": "画像 5"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_6",
+                "label": "画像 6"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_7",
+                "label": "画像 7"
+            },
+            {
+                "type": "image_picker",
+                "id": "gallery_image_8",
+                "label": "画像 8"
+            }
+        ],
+        "presets": [
+            {
+                "name": "ギャラリー",
+                "category": "画像"
+            }
+        ]
+    }
+{% endschema %}
