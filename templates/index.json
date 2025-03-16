@@ -8,33 +8,33 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main-background-video": {
-      "type": "main-background-video",
-      "settings": {
-        "main-video-pc": "shopify://files/videos/cream-decoration1080p.mp4",
-        "main-video-mobile": "shopify://files/videos/cream-decoration480p.mp4"
-      }
+    "sections": {
+        "main-background-video": {
+            "type": "main-background-video",
+            "settings": {
+                "main-video-pc": "shopify://files/videos/cream-decoration1080p.mp4",
+                "main-video-mobile": "shopify://files/videos/cream-decoration480p.mp4"
+            }
+        },
+        "main-store-intro": {
+            "type": "main-store-intro",
+            "settings": {
+                "store_logo": "shopify://shop_images/mogu_kyoto_logo.png",
+                "store_name": "MOGU kyoto",
+                "store_small_intro": "丸太町で国産食材をテーマにした、自然派のケーキと焼き菓子に出会えるパティスリー"
+            }
+        },
+        "main-product-list": {
+            "type": "main-product-list",
+            "settings": {
+                "main-title": "おすすめ商品",
+                "main-collection": "frontpage"
+            }
+        },
+        "main-slide-gallary": {
+            "type": "main-slide-gallary",
+            "settings": {}
+        }
     },
-    "main-store-intro": {
-      "type": "main-store-intro",
-      "settings": {
-        "store_logo": "shopify://shop_images/mogu_kyoto_logo.png",
-        "store_name": "MOGU kyoto",
-        "store_small_intro": "丸太町で国産食材をテーマにした、自然派のケーキと焼き菓子に出会えるパティスリー"
-      }
-    },
-    "main-product-list": {
-      "type": "main-product-list",
-      "settings": {
-        "main-title": "おすすめ商品",
-        "main-collection": "frontpage"
-      }
-    }
-  },
-  "order": [
-    "main-background-video",
-    "main-store-intro",
-    "main-product-list"
-  ]
+    "order": ["main-background-video", "main-store-intro", "main-slide-gallary", "main-product-list"]
 }
