@@ -9,6 +9,9 @@ export default {
         './**/*.html',
         './**/*.js',
     ],
+    safelist: [
+        { pattern: /./ }, // 🔥 Incluye TODAS las clases de Tailwind
+    ],
     theme: {
         extend: {},
     },

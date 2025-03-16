@@ -5,12 +5,21 @@
     {% endif %}
 
     {% comment %} ストア名 {% endcomment %}
-    <h1 class='text-2xl font-bold my-4'>{{ section.settings.store_name }}</h1>
+    <h1 class='text-3xl font-bold my-4'>{{ section.settings.store_name }}</h1>
 
     {% comment %} ストア説明文 {% endcomment %}
-    <p class='mt-2 text-lg text-gray-700 max-w-lg'>
+    <p class='m-3 text-sm font-light text-gray-800'>
         {{ section.settings.store_small_intro }}
     </p>
+    {% comment %} お店の紹介ページボタン {% endcomment %}
+    <div class='mt-6 text-center'>
+        <a
+            href='/about'
+            class='inline-block bg-pink-300 text-white text-xs font-normal py-3 px-6 border-2 border-white hover:border-pink-300 transition'
+        >
+            {{ section.settings.store_name }}について
+        </a>
+    </div>
 </section>
 
 {% schema %}
