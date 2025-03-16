@@ -24,10 +24,6 @@
         "store_small_intro": "丸太町で国産食材をテーマにした、自然派のケーキと焼き菓子に出会えるパティスリー"
       }
     },
-    "main-slide-gallary": {
-      "type": "main-slide-gallary",
-      "settings": {}
-    },
     "main_slide_gallary_Aq6Fhm": {
       "type": "main-slide-gallary",
       "settings": {
@@ -53,7 +49,6 @@
   "order": [
     "main-background-video",
     "main-store-intro",
-    "main-slide-gallary",
     "main_slide_gallary_Aq6Fhm",
     "main-product-list"
   ]
