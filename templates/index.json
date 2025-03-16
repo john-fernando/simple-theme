@@ -24,19 +24,6 @@
         "store_small_intro": "丸太町で国産食材をテーマにした、自然派のケーキと焼き菓子に出会えるパティスリー"
       }
     },
-    "main_slide_gallary_Aq6Fhm": {
-      "type": "main-slide-gallary",
-      "settings": {
-        "gallery_image_1": "shopify://shop_images/3297075-6629c3a826d8c_111d51c5-b905-4920-9adf-94c916c4428b.webp",
-        "gallery_image_2": "shopify://shop_images/3296298-6628c293e8bdc.webp",
-        "gallery_image_3": "shopify://shop_images/3309137-664311b89b8b4.webp",
-        "gallery_image_4": "shopify://shop_images/3309144-664311c55df12.webp",
-        "gallery_image_5": "shopify://shop_images/3297076-6629c3aa98509.webp",
-        "gallery_image_6": "shopify://shop_images/3296302-6628c2c439f4f.webp",
-        "gallery_image_7": "shopify://shop_images/3309141-664311c0ebfc6.webp",
-        "gallery_image_8": "shopify://shop_images/3309139-664311bcd496e.webp"
-      }
-    },
     "main-product-list": {
       "type": "main-product-list",
       "settings": {
@@ -49,7 +36,6 @@
   "order": [
     "main-background-video",
     "main-store-intro",
-    "main_slide_gallary_Aq6Fhm",
     "main-product-list"
   ]
 }
