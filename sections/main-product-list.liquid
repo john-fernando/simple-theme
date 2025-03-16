@@ -3,6 +3,10 @@
         {{ section.settings['main-title'] }}
     </h2>
 
+    <p class='text-center text-gray-700 mb-6'>
+        {{ section.settings.description }}
+    </p>
+
     <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {% for product in collections[section.settings['main-collection']].products %}
             <div class='border rounded-lg p-4 shadow-md bg-white'>
@@ -43,6 +47,12 @@
                 "type": "collection",
                 "id": "main-collection",
                 "label": "表示する商品コレクション"
+            },
+            {
+                "type": "text",
+                "id": "description",
+                "label": "説明文",
+                "default": "当店のおすすめ商品を厳選しました。こだわりの素材と丁寧な製法で作られた、特別な味わいをお楽しみください。"
             }
         ],
         "presets": [
