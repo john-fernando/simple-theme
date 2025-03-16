@@ -1,7 +1,13 @@
 <div class='gallery-container'>
     <div class='gallery'>
-        {% for image in section.settings.gallery_images %}
-            {{ image | image_url: width: null | image_tag }}
+        {% for i in (1..2) %}
+            {% for j in (1..8) %}
+                {% assign image_var = 'gallery_image_' | append: j %}
+                {% assign image = section.settings[image_var] %}
+                {% if image %}
+                    {{ image | image_url: width: null | image_tag: class: 'gallery' }}
+                {% endif %}
+            {% endfor %}
         {% endfor %}
     </div>
 </div>
@@ -10,14 +16,13 @@
     /* ギャラリーの枠 */
     .gallery-container {
         overflow: hidden;
-        white-space: nowrap;
         position: relative;
         width: 100%;
         background-color: #f8f8f8;
-        padding: 20px 0;
+        padding: 30px 0;
     }
 
-    /* スライド全体 */
+    /* スライド全体（2セットの画像を含む） */
     .gallery {
         display: flex;
         gap: 10px;
@@ -27,7 +32,7 @@
     /* 画像のサイズ */
     .gallery img {
         width: 200px;
-        height: 150px;
+        height: 200px;
         object-fit: cover;
         border-radius: 8px;
     }
@@ -38,14 +43,14 @@
             transform: translateX(0);
         }
         to {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 </style>
 
 {% schema %}
     {
-        "name": "ギャラリー",
+        "name": "スライドギャラリー",
         "settings": [
             {
                 "type": "image_picker",
@@ -90,7 +95,7 @@
         ],
         "presets": [
             {
-                "name": "ギャラリー",
+                "name": "スライドギャラリー",
                 "category": "画像"
             }
         ]
