@@ -1,0 +1,55 @@
+<section class='container mx-auto px-4 py-8'>
+    <h2 class='text-2xl font-normal text-gray-800 mb-6'>
+        {{ section.settings['main-title'] }}
+    </h2>
+
+    <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+        {% for product in collections[section.settings['main-collection']].products %}
+            <div class='border rounded-lg p-4 shadow-md bg-white'>
+                <a href='{{ product.url }}'>
+                    {% if product.featured_image %}
+                        {{ product.featured_image | image_url: width: null | image_tag: class: 'rounded-lg' }}
+                    {% endif %}
+
+                    <h3 class='mt-2 text-lg font-semibold text-gray-900'>{{ product.title }}</h3>
+                    <p class='text-gray-700 my-1'>{{ product.price | money }}</p>
+                </a>
+                <div class='mt-3 text-center'>
+                    <a
+                        href='{{ product.url }}'
+                        class='inline-block bg-pink-300 text-white text-xs font-normal py-2 px-3 border-2 border-white hover:border-pink-300 transition'
+                    >
+                        商品を見る
+                    </a>
+                </div>
+            </div>
+        {% else %}
+            <p class='text-center text-gray-600 my-5'>現在、商品がありません。</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "おすすめ商品",
+        "settings": [
+            {
+                "type": "text",
+                "id": "main-title",
+                "label": "セクションタイトル",
+                "default": "おすすめ商品"
+            },
+            {
+                "type": "collection",
+                "id": "main-collection",
+                "label": "表示する商品コレクション"
+            }
+        ],
+        "presets": [
+            {
+                "name": "おすすめ商品",
+                "category": "商品"
+            }
+        ]
+    }
+{% endschema %}
